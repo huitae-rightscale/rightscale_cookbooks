@@ -11,27 +11,27 @@ package "nginx" do
   action :install
 end
 
-directory "/var/nginx/html" do
-  group "root"
-  user "root"
-  mode "0755"
-  recursive :true
-  action :create
-end
-
-template "/etc/nginx/conf.d/default.conf" do
-  source "default.conf.erb"
-  variables(
-    :index_root => node[:config][:index_root]
-  )
-end
-
-execute "setup index.html" do
- command "tar cvfz htkim_nginx.tar"
- creates "/var/nginx/html/index.html"
- action :nothing
-end
-
+#directory "/var/nginx/html" do
+#  group "root"
+#  user "root"
+#  mode "0755"
+#  recursive :true
+#  action :create
+#end
+#
+#template "/etc/nginx/conf.d/default.conf" do
+#  source "default.conf.erb"
+#  variables(
+#    :index_root => node[:config][:index_root]
+#  )
+#end
+#
+#execute "setup index.html" do
+# command "tar cvfz htkim_nginx.tar"
+# creates "/var/nginx/html/index.html"
+# action :nothing
+#end
+#
 service "nginx" do
   action :start
 end
