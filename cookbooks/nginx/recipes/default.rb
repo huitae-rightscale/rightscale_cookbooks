@@ -15,7 +15,6 @@ end
 #  group "root"
 #  user "root"
 #  mode "0755"
-#  recursive :true
 #  action :create
 #end
 #
