@@ -32,7 +32,7 @@ end
 
 template "/etc/nginx/nginx.conf" do
   source "nginx.conf.erb"
-  variables (
+  variables(
       :worker_process => node[:config][:worker_process],
       :worker_connections => node[:config][:connections],
       :keepalive_timeout => node[:config][:keepalive_timeout]
@@ -41,7 +41,7 @@ end
 
 template "/etc/nginx/conf.d/default.conf" do
   source "default.conf.erb"
-  variables (
+  variables(
       :index_root => node[:config][:index_root]
   )
 end
