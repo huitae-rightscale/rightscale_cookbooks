@@ -32,4 +32,7 @@
 # DISTRO specific config dir
 
 set_unless[:config][:index_root] = "/var/nginx/html"
+set_unless[:config][:worker_process] = "2"
+set_unless[:config][:worker_connections] = "2048"
+set_unless[:config][:keepalive_timeout] = "30"
 

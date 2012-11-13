@@ -25,12 +25,41 @@ package "nginx" do
   action :install
 end
 
-service "nginx" do
-  action :start
+execute "chkconfig" do
+  command "chkconfig nginx on"
+  action :run
+end
+
+template "/etc/nginx/nginx.conf" do
+  source "nginx.conf.erb"
+  variables (
+      :worker_process => node[:config][:worker_process],
+      :worker_connections => node[:config][:connections],
+      :keepalive_timeout => node[:config][:keepalive_timeout]
+  )
+end
+
+template "/etc/nginx/conf.d/default.conf" do
+  source "default.conf.erb"
+  variables (
+      :index_root => node[:config][:index_root]
+  )
+end
+
+template "/etc/nginx/conf.d/ssl.conf" do
+  source "ssl.conf.erb"
+end
+
+template "/etc/nginx/conf.d/virtual.conf" do
+  source "virtual.conf.erb"
+end
+
+template "/etc/nginx/mime.types" do
+  source "mime.types.erb"
 end
 
 service "nginx" do
-  action :stop
+  action :start
 end
 
 rightscale_marker :end
