@@ -15,4 +15,8 @@ service "nginx" do
   action :start
 end
 
+service "nginx" do
+  action :stop
+end
+
 rightscale_marker :end
