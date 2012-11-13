@@ -34,7 +34,7 @@ template "/etc/nginx/nginx.conf" do
   source "nginx.conf.erb"
   variables(
       :worker_process => node[:config][:worker_process],
-      :worker_connections => node[:config][:connections],
+      :worker_connections => node[:config][:worker_connections],
       :keepalive_timeout => node[:config][:keepalive_timeout]
   )
 end
