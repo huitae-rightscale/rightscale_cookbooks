@@ -16,7 +16,7 @@
 #----------------------------------------------------------------------
 
 user              nginx;
-worker_processes  <%= @params[:worker_process] %>;
+worker_processes  <%= @worker_process %>;
 
 error_log  /var/log/nginx/error.log;
 #error_log  /var/log/nginx/error.log  notice;
@@ -33,7 +33,7 @@ pid        /var/run/nginx.pid;
 #----------------------------------------------------------------------
 
 events {
-    worker_connections  <%= @params[:worker_connections] %>;
+    worker_connections  <%= @worker_connections %>;
 }
 
 
@@ -58,7 +58,7 @@ http {
     #tcp_nopush     on;
 
     #keepalive_timeout  0;
-    keepalive_timeout  <%= @params[:keepalive_timeout] %>;
+    keepalive_timeout  <%= @keepalive_timeout %>;
 
     #gzip  on;
     

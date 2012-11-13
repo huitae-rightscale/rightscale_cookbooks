@@ -10,7 +10,7 @@ server {
     #access_log  logs/host.access.log  main;
 
     location / {
-        root   <%= @params[:index_root] %>;
+        root   <%= @index_root %>;
         index  index.html index.htm;
     }
 
