@@ -13,12 +13,6 @@ recipe "nginx::default", "Runs nginx::install_nginx."
 #recipe "nginx::do_stop", "Runs service nginx stop."
 #recipe "nginx::do_restart", "Runs service nginx restart."
 #recipe "nginx::do_enable_default_site", "Enables the default vhost."
-#recipe "nginx::install_nginx", "Installs and configures the nginx2 webserver."
-#recipe "nginx::setup_frontend", "Frontend nginx vhost. Select ssl_enabled for SSL."
-#recipe "nginx::setup_frontend_ssl_vhost", "Frontend nginx vhost with SSL enabled."
-#recipe "nginx::setup_frontend_http_vhost", "Frontend nginx vhost with SSL enabled."
-#recipe "nginx::setup_monitoring", "Installs the collectd-nginx plugin for monitoring support."
-
 
 all_recipes = [
   "nginx::default",
