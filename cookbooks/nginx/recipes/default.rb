@@ -5,6 +5,9 @@
 # RightScale Terms of Service available at http://www.rightscale.com/terms.php and,
 # if applicable, other agreements such as a RightScale Master Subscription Agreement.
 
+# pushed onto HTKIM-Nginx
+# should not be showed on master branch
+
 rightscale_marker :begin
 
 service "nginx" do
