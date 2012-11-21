@@ -9,17 +9,9 @@ supports "redhat", "~> 5.8"
 supports "ubuntu", "~> 10.04.0"
 
 recipe "nginx::default", "Runs nginx::install_nginx."
-#recipe "nginx::do_start", "Runs service nginx start."
-#recipe "nginx::do_stop", "Runs service nginx stop."
-#recipe "nginx::do_restart", "Runs service nginx restart."
-#recipe "nginx::do_enable_default_site", "Enables the default vhost."
 
 all_recipes = [
   "nginx::default",
-#  "nginx::install_nginx",
-#  "nginx::setup_frontend_ssl_vhost",
-#  "nginx::setup_frontend_http_vhost",
-#  "nginx::setup_frontend",
 ]
 
 #depends "nginx"
