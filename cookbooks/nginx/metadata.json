@@ -3,45 +3,45 @@
   },
   "providing": {
   },
-  "recommendations": {
-  },
-  "long_description": "",
-  "suggestions": {
-  },
-  "maintainer_email": "support@rightscale.com",
-  "maintainer": "RightScale, Inc.",
-  "dependencies": {
-    "rightscale": ">= 0.0.0"
-  },
   "version": "12.1.0",
+  "groupings": {
+  },
   "conflicting": {
   },
   "license": "Copyright RightScale, Inc. All rights reserved.",
+  "maintainer_email": "support@rightscale.com",
   "description": "Installs/configures the nginx2 webserver",
   "platforms": {
-    "redhat": "~> 5.8",
     "ubuntu": "~> 10.04.0",
-    "centos": "~> 5.8"
+    "centos": "~> 5.8",
+    "redhat": "~> 5.8"
   },
+  "maintainer": "RightScale, Inc.",
+  "name": "nginx",
   "recipes": {
     "nginx::default": "Runs nginx::install_nginx."
   },
+  "long_description": "",
   "attributes": {
     "nginx": {
-      "display_name": "nginx for test",
-      "required": "optional",
-      "description": "nginx Web Server",
+      "calculated": false,
       "type": "hash",
+      "choice": [
+
+      ],
+      "description": "nginx Web Server",
+      "required": "optional",
       "recipes": [
 
       ],
-      "calculated": false,
-      "choice": [
-
-      ]
+      "display_name": "nginx for test"
     }
   },
-  "groupings": {
+  "recommendations": {
   },
-  "name": "nginx"
+  "suggestions": {
+  },
+  "dependencies": {
+    "rightscale": ">= 0.0.0"
+  }
 }
